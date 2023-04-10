@@ -65,7 +65,7 @@ public class User implements Serializable {
     @Column(name = "status")
     private Integer status;
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_role", catalog = "truyendb", joinColumns = {
+    @JoinTable(name = "user_role", joinColumns = {
             @JoinColumn(name = "userId", nullable = false, updatable = false)}, inverseJoinColumns = {
             @JoinColumn(name = "roleId", nullable = false, updatable = false)})
     private Collection< Role > roleList;
