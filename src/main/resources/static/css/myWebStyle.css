@@ -28,7 +28,7 @@ body {
 }
 
 body {
-    background-image: url(images/footer-bg.png);
+    /* background-image: url(images/footer-bg.png); */
     background-repeat: no-repeat;
     background-position: bottom right;
 }
@@ -59,7 +59,7 @@ body {
 
 @media only screen and (min-width: 769px) {
     .page-wrapper {
-        background-image: url(images/body-bg.png);
+        /* background-image: url(images/body-bg.png); */
         background-repeat: no-repeat;
         background-position: center top;
         -moz-background-size: 100% auto;
@@ -68,7 +68,7 @@ body {
     }
 
     .truyen-main {
-        margin-top: 250px
+        margin-top: 20px
     }
 
 }
@@ -153,7 +153,7 @@ input.is-invalid, textarea.is-invalid {
 }
 
 .page-read {
-    background-image: url(images/footer-bg.png);
+    /* background-image: url(images/footer-bg.png); */
     background-repeat: no-repeat;
     background-position: bottom right;
 }
@@ -1620,7 +1620,7 @@ button {
 /* FOOTER CSS */
 .truyen-footer {
     border-top: 4px solid #007bff;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 
 #footer {

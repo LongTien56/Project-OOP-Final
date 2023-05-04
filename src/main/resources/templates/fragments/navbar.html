@@ -2,16 +2,21 @@
     <nav class="navbar navbar-truyen">
         <section class="container">
             <section class="navbar-header">
-                <th:block th:if="${information.logo !=null}">
+                <!-- <th:block th:if="${information.logo !=null}">
                     <a th:href="@{/}" class="navbar-logo hidden-sm hidden-xs"> <img
                             class="img-fluid" th:src='${information.logo}' alt="">
                     </a>
-                </th:block>
-                <th:block th:unless="${information.logo !=null}">
+                </th:block> -->
+                <!-- <th:block th:unless="${information.logo !=null}">
                     <a th:href="@{/}" class="navbar-logo hidden-sm hidden-xs"> <img
                             class="img-fluid" th:src="@{/images/logo.png}" alt="">
                     </a>
-                </th:block>
+                </th:block> -->      
+                <th:block th:if="${information.logo !=null}">
+                    <a th:href="@{/}" class="navbar-logo hidden-sm hidden-xs" style="height: auto; border-radius: 4px;"> <img
+                            class="mh-100 mw-100" th:src="@{/images/bm-logo.png}" alt="">
+                    </a>
+                </th:block>        
                 <a href="#" class="navbar-search-btn js-open-search-box-mobile d-md-block d-lg-none">
                     <i class="truyen-icon icon-search"></i>
                 </a>
@@ -26,17 +31,17 @@
                     </button>
                     <ul class="navbar-category-list">
                         <li class="col-4 float-left">
-                            <a th:href="@{/danh-muc/hoan-thanh}" title="Truyện Hoàn Thành">Truyện Hoàn Thành</a>
+                            <a th:href="@{/danh-muc/hoan-thanh}" title="Báo Hoàn Thành">Báo Hoàn Thành</a>
                         </li>
                         <li class="col-4 float-left">
-                            <a th:href="@{/danh-muc/moi-cap-nhat}" title="Truyện Mới">Truyện Mới</a>
+                            <a th:href="@{/danh-muc/moi-cap-nhat}" title="Báo Mới">Báo Mới</a>
                         </li>
                         <li class="col-4 float-left">
-                            <a th:href="@{/danh-muc/truyen-vip}" title="Truyện Vip">Truyện Vip</a>
+                            <a th:href="@{/danh-muc/truyen-vip}" title="Báo Vip">Báo Vip</a>
                         </li>
                     </ul>
                 </section>
-                <section class="navbar-category">
+                <section class="navbar-category d-none">
                     <button class="navbar-category-btn js-open-sidebar">
                             <span class="lines">
                                 <span class="line"></span>
@@ -50,7 +55,7 @@
                         <li class="col-4 float-left"
                             th:each="category,iterStat : ${categorylist}">
                             <a th:href="@{'/the-loai/'+${category.id}+'/'+${category.metatitle}}"
-                               th:title="'Truyện'+${category.name}"
+                               th:title="'báo'+${category.name}"
                                th:text="${iterStat.index+1}+' - '+${category.name}"></a>
                         </li>
                     </ul>
@@ -70,7 +75,7 @@
                             <form id="js-search-panel" class="search-panel" th:action="@{/search}" th:method="POST">
                                 <div class="txtDiv">
                                     <input type="text" name="txtKeyword" id="txtKeyword" value=""
-                                           placeholder="Tên truyện" class="form-control"
+                                           placeholder="Tên báo" class="form-control"
                                            autocomplete="off" required
                                            oninvalid="this.setCustomValidity('Bạn chưa nhập gì để tìm kiếm!')">
                                     <button class="btn btn-search mt-0" type="submit">
@@ -81,7 +86,7 @@
                                         role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 16;
         display: none; width: 150px;">
                                         <li class="ui-menu-item" role="menuitem">
-                                            <a class="ui-corner-all" tabindex="-1">Không Có Truyện Phù Hợp </a>
+                                            <a class="ui-corner-all" tabindex="-1">Không Có báo Phù Hợp </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -103,11 +108,11 @@
                             <span class="truyen-login-title" sec:authentication="name"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_SMOD')"><a th:href="@{/quan-tri/}">Trang Quản Lý</a></li>
+                            <li class="d-none" sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_SMOD')"><a th:href="@{/quan-tri/}">Trang Quản Lý</a></li>
                             <li><a th:href="@{/tai-khoan/}">Hồ Sơ</a></li>
-                            <li><a th:href="@{/tai-khoan/theo_doi}">Truyện Theo Dõi</a></li>
-                            <li><a th:href="@{/tai-khoan/quan_ly_truyen}">Quản Lý Truyện</a></li>
-                            <li><a th:href="@{/tai-khoan/nap-dau}">Nạp Đậu</a></li>
+                            <li class="d-none"><a th:href="@{/tai-khoan/theo_doi}">Báo Theo Dõi</a></li>
+                            <li><a th:href="@{/tai-khoan/quan_ly_truyen}">Quản Lý báo</a></li>
+                            <li class="d-none"><a th:href="@{/tai-khoan/nap-dau}">Nạp Đậu</a></li>
                             <li class="dropdown-divider"></li>
                             <li><a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Thoát</a></li>
                         </ul>
@@ -168,23 +173,23 @@
                              id="truyen-user-menu-collapse">
                         <section class="list-group-item list-group-item-sidebar list-group-item-diver"></section>
                         <section class="list-group-item list-group-item-sidebar">
-                            <a href="/tai-khoan/dang-truyen/">Đăng truyện<span
+                            <a href="/tai-khoan/dang-truyen/">Đăng báo<span
                                     class="truyen-icon icon-white-next"></span>
                             </a>
                         </section>
                         <section class="list-group-item list-group-item-sidebar">
-                            <a href="/tai-khoan/theo_doi/">Truyện Theo Dõi<span
+                            <a href="/tai-khoan/theo_doi/">báo Theo Dõi<span
                                     class="truyen-icon icon-white-next"></span>
                             </a>
                         </section>
                         <section class="list-group-item list-group-item-sidebar">
-                            <a href="/account/list_story/">Quản lý truyện<span
+                            <a href="/account/list_story/">Quản lý báo<span
                                     class="truyen-icon icon-white-next"></span></a>
                         </section>
                         <section
                                 class="list-group-item list-group-item-sidebar list-group-item-diver"></section>
                         <section class="list-group-item list-group-item-sidebar">
-                            <a href="/tai-khoan/tu-truyen/">Tủ truyện<span
+                            <a href="/tai-khoan/tu-truyen/">Tủ báo<span
                                     class="truyen-icon icon-white-next"></span></a>
                         </section>
                         <section
@@ -214,19 +219,19 @@
             <section class="list-group" style="margin-bottom: 20px;">
                 <section class="list-group-item list-group-item-action list-group-item-sidebar">
                     <a th:href="@{/danh-muc/moi-cap-nhat}" target="_blank"
-                       title="Truyện Mới"> Truyện Mới <span
+                       title="Báo Mới"> Báo Mới <span
                             class="truyen-icon icon-next"></span>
                     </a>
                 </section>
                 <section class="list-group-item list-group-item-action list-group-item-sidebar">
                     <a th:href="@{/danh-muc/truyen-hoan-thanh}" target="_blank"
-                       title="Truyện Hoàn Thành"> Truyện Hoàn Thành <span
+                       title="Báo Hoàn Thành"> Báo Hoàn Thành <span
                             class="truyen-icon icon-next"></span>
                     </a>
                 </section>
                 <section class="list-group-item list-group-item-action list-group-item-sidebar">
                     <a th:href="@{/danh-muc/truyen-vip}" target="_blank"
-                       title="Truyện Vip"> Truyện Vip <span
+                       title="Báo Vip"> Báo Vip <span
                             class="truyen-icon icon-next"></span>
                     </a>
                 </section>
@@ -237,7 +242,7 @@
                      th:if="${categorylist != null && not #lists.isEmpty(categorylist)}"
                      th:each="category,iterStat : ${categorylist}">
                 <a th:href="@{'/the-loai/'+${category.id}+'/'+${category.metatitle}}"
-                   th:title="'Truyện'+${category.name}"
+                   th:title="'báo'+${category.name}"
                 ><span th:text="${iterStat.index+1}+' - '+${category.name}"></span> <span
                         class="truyen-icon icon-next"></span></a>
             </section>
@@ -249,7 +254,7 @@
     <section class="container">
         <form class="search-box-mobile" method="post" th:action="@{/search}">
             <input type="text" id="txtKeywordMobi" name="txtKeyword"
-                   class="form-control" placeholder="Tên truyện hoặc tác giả không dấu" value=""
+                   class="form-control" placeholder="Tên báo hoặc tác giả không dấu" value=""
                    autocomplete="off" required oninvalid="this.setCustomValidity('Bạn chưa nhập gì để tìm kiếm!')">
             <button type="submit" class="search-box-mobile-btn"
                     id="js-search-box-mobile-btn">

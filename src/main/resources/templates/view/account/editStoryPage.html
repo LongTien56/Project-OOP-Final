@@ -47,7 +47,7 @@
                                         <div class="col">
                                             <div class="card mb-5">
                                                 <h3 class="card-header primary-color white-text">
-                                                    <span class="oi oi-book"></span> Cập Nhật Truyện</h1>
+                                                    <span class="oi oi-book"></span> Cập Nhật Báo</h1>
                                                 </h3>
                                                 <div class="card-body">
                                                     <form method="POST" enctype="multipart/form-data" class="section-preview" th:object="${story}"
@@ -56,8 +56,8 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
-                                                                    <input type="text" class="form-control" id="id" name="vnName" th:value="*{vnName}" readonly>
-                                                                    <label for="id" class="form-label text-primary">ID Truyện </label>
+                                                                    <input type="text" class="form-control" id="id" name="vnName" th:value="*{vnName}" readonly disabled="disabled">
+                                                                    <label for="id" class="form-label text-primary">ID Báo </label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -66,7 +66,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
-                                                                    <input type="text" class="form-control" id="vnName" name="vnName" th:value="*{vnName}"
+                                                                    <input type="text" class="form-control cursor-pointer" id="vnName" name="vnName" th:value="*{vnName}"
                                                                            th:classappend="${#fields.hasErrors('vnName')} ? 'is-invalid' : ''">
                                                                     <label for="vnName" class="form-label text-primary">Tên Tiếng Việt </label>
                                                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('vnName')}" th:errors="*{vnName}"></em>
@@ -75,7 +75,7 @@
                                                         </div>
                                                         <!--Grid row-->
                                                         <!--Grid row-->
-                                                        <div class="row">
+                                                        <div class="row d-none">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
                                                                     <input type="text" class="form-control" id="cnName" name="cnName" th:value="*{cnName}"
@@ -87,7 +87,7 @@
                                                         </div>
                                                         <!--Grid row-->
                                                         <!--Grid row-->
-                                                        <div class="row">
+                                                        <div class="row d-none">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
                                                                     <input type="url" class="form-control" id="cnLink" name="cnLink" th:value="*{cnLink}"
@@ -117,7 +117,7 @@
                                                                 <div class="md-form mb-0">
                                                                     <textarea type="text" id="infomation" name="infomation" rows="6" class="form-control md-textarea" th:field="*{infomation}"
                                                                               th:classappend="${#fields.hasErrors('infomation')} ? 'is-invalid' : ''"></textarea>
-                                                                    <label for="infomation" class=" text-primary form-label">Giới Thiệu</label>
+                                                                    <label for="infomation" class=" text-primary form-label">Nội dung báo</label>
                                                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('infomation')}" th:errors="*{infomation}"></em>
                                                                 </div>
                                                             </div>
@@ -207,8 +207,8 @@
                                                         <!--Grid row-->
                                                         <div class="row text-right">
                                                             <div class="col-12">
-                                                                <input type="reset" class="btn btn-outline-primary btn-rounded waves-effect" value="Khôi Phục"/>
-                                                                <input type="submit" class="btn btn-outline-primary btn-rounded waves-effect" value="Cập NhậtTruyện"/>
+                                                                <input type="reset" class="btn btn-outline-primary btn-rounded waves-effect d-none" value="Khôi Phục"/>
+                                                                <input type="submit" class="btn btn-outline-primary btn-rounded waves-effect" value="Cập Nhật Báo"/>
                                                             </div>
                                                         </div>
                                                     </form>

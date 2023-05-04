@@ -34,7 +34,7 @@
                                         sec:authorize="!hasAnyRole('ROLE_ADMIN','ROLE_CONVERTER')">
                                         <div class="alert alert-danger text-center text-black" role="alert"
                                             style="font-size: larger;">
-                                            <span class="font-weight-bold">Bạn không có đủ quyền để đăng truyện
+                                            <span class="font-weight-bold">Bạn không có đủ quyền để đăng báo
                                                 mới</span>
                                         </div>
                                     </section>
@@ -44,7 +44,7 @@
                                             <div class="col">
                                                 <div class="card mb-5">
                                                     <h3 class="card-header primary-color white-text">
-                                                        <span class="oi oi-book"></span> Đăng Truyện</h1>
+                                                        <span class="oi oi-book"></span> Đăng Báo</h1>
                                                     </h3>
                                                     <div class="card-body">
                                                         <form method="POST" enctype="multipart/form-data"
@@ -59,14 +59,14 @@
                                                                             id="vnName" name="vnName"
                                                                             th:value="*{vnName}" length="255"
                                                                             th:classappend="${#fields.hasErrors('vnName')} ? 'is-invalid' : ''">
-                                                                    <label for="vnName" class="form-label text-primary">Tên Tiếng Việt </label>
+                                                                    <label for="vnName" class="form-label text-primary">Tiêu đề </label>
                                                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('vnName')}" th:errors="*{vnName}"></em>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <!--Grid row-->
                                                         <!--Grid row-->
-                                                        <div class="row">
+                                                        <div class="row d-none">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
                                                                     <input type="text" class="form-control" length="255" id="cnName" name="cnName" th:value="*{cnName}"
@@ -78,7 +78,7 @@
                                                         </div>
                                                         <!--Grid row-->
                                                         <!--Grid row-->
-                                                        <div class="row">
+                                                        <div class="row d-none">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
                                                                     <input type="url" class="form-control" id="cnLink" name="cnLink" th:value="*{cnLink}" length="255"
@@ -108,7 +108,7 @@
                                                                 <div class="md-form mb-0">
                                                                     <textarea type="text" id="infomation" name="infomation" rows="6" class="form-control md-textarea" th:value="*{infomation}"
                                                                               th:classappend="${#fields.hasErrors('infomation')} ? 'is-invalid' : ''"></textarea>
-                                                                    <label for="infomation" class=" text-primary">Giới Thiệu</label>
+                                                                    <label for="infomation" class=" text-primary">Nội dung báo</label>
                                                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('infomation')}" th:errors="*{infomation}"></em>
                                                                 </div>
                                                             </div>
@@ -176,8 +176,8 @@
                                                         </div>
                                                         <div class="row text-right">
                                                             <div class="col-12">
-                                                                <input type="reset" class="btn btn-outline-primary btn-rounded waves-effect" value="Khôi Phục"/>
-                                                                <input type="submit" class="btn btn-outline-primary btn-rounded waves-effect" value="Đăng Truyện"/>
+                                                                <input type="reset" class="btn btn-outline-primary btn-rounded waves-effect d-none" value="Khôi Phục"/>
+                                                                <input type="submit" class="btn btn-outline-primary btn-rounded waves-effect" value="Đăng Báo"/>
                                                             </div>
                                                         </div>
                                                     </form>

@@ -43,7 +43,7 @@
                                     <img class="img-fluid lazyload" th:data-src="${story.images}">
                                 </section>
                             </section>
-                            <section class="col-info col-6">
+                            <section class="col-info col-9">
                                 <section class="info">
                                     <h1 class="title">
                                         <a href="" th:title="${story.vnName}" th:text="${story.vnName}"></a>
@@ -66,7 +66,7 @@
                                                 </ul>
                                             </section>
                                         </section>
-                                        <section class="item">
+                                        <section class="item d-none">
                                             <section class="item-label"> Tình trạng:</section>
                                             <section class="item-value">
                                                     <span class="story-go text-center" th:if="${story.status==1}">
@@ -98,7 +98,7 @@
                                             </section>
                                         </section>
                                     </section>
-                                    <section class="buttons">
+                                    <section class="buttons d-none">
                                         <a th:if="${readChapter ne null}" class="btn btn-truyen"
                                            th:href="@{'/truyen/' + ${story.id} + '/chuong-' + ${readChapter.id}}">
                                             Đọc tiếp
@@ -118,7 +118,7 @@
                                 </section>
                             </section>
 
-                            <section class="col-rating col-3">
+                            <section class="col-rating col-3 d-none">
                                 <section class="rating-container text-center" itemscope="">
                                     <section class="title"> Đánh giá</section>
                                     <section class="content" itemprop="aggregateRating" itemscope="">
