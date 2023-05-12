@@ -2,10 +2,7 @@ package apt.hthang.doctruyenonline.projections;
 
 import org.springframework.beans.factory.annotation.Value;
 
-/**
- * @author Linh
- * @project doctruyenonline
- */
+
 public interface InfoSummary {
     
     Long getId();

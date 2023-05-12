@@ -2,10 +2,7 @@ package apt.hthang.doctruyenonline.projections;
 
 import org.springframework.beans.factory.annotation.Value;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project truyenonline
- */
+
 public interface StoryAdmin {
     
     Long getId();

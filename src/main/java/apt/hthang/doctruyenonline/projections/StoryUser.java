@@ -1,9 +1,6 @@
 package apt.hthang.doctruyenonline.projections;
 
-/**
- * @author Linh
- * @project doctruyenonline
- */
+
 public interface StoryUser {
     
     Long getId();

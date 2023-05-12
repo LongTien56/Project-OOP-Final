@@ -4,10 +4,6 @@ import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
 
-/**
- * @author Đời Không Như Là Mơ on 04/12/2018
- * @project truyenonline
- */
 public interface ChapterOfStory {
 
     Long getId();

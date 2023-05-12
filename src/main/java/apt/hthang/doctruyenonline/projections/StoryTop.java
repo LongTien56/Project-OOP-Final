@@ -1,9 +1,6 @@
 package apt.hthang.doctruyenonline.projections;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project truyenonline
- */
+
 public interface StoryTop {
     
     Long getId();

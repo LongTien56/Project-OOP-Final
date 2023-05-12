@@ -2,9 +2,6 @@ package apt.hthang.doctruyenonline.projections;
 
 import org.springframework.beans.factory.annotation.Value;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 public interface TopConverter {
     
     Long getId();
