@@ -12,10 +12,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.lang.reflect.Field;
 
-/**
- * @author Đời Không Như Là Mơ on 13/10/2018
- * @project truyenmvc
- */
+
 
 public class FormatFloatValidator implements ConstraintValidator< FormatFloat, Object > {
     

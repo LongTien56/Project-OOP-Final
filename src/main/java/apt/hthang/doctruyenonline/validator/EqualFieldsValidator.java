@@ -7,10 +7,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.lang.reflect.Field;
 
-/**
- * @author Đời Không Như Là Mơ on 14/10/2018
- * @project truyenmvc
- */
+
 
 public class EqualFieldsValidator implements ConstraintValidator< EqualFields, Object> {
 

@@ -15,10 +15,6 @@ import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author Đời Không Như Là Mơ on 28/01/2019
- * @project truyenonline-multi-model
- */
 @Entity
 @Table(name = "category", uniqueConstraints = {@UniqueConstraint(columnNames = "name")})
 @Data

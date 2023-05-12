@@ -9,10 +9,6 @@ import org.springframework.context.ApplicationContext;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
 
 public class UniqueValidator implements ConstraintValidator< Unique, Object > {
     @Autowired

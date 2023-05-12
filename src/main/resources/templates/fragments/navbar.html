@@ -31,14 +31,14 @@
                     </button>
                     <ul class="navbar-category-list">
                         <li class="col-4 float-left">
-                            <a th:href="@{/danh-muc/hoan-thanh}" title="Báo Hoàn Thành">Báo Hoàn Thành</a>
+                            <a th:href="@{/danh-muc/hoan-thanh}" title="Báo Hoàn Thành">Truyện Hoàn Thành</a>
                         </li>
                         <li class="col-4 float-left">
-                            <a th:href="@{/danh-muc/moi-cap-nhat}" title="Báo Mới">Báo Mới</a>
+                            <a th:href="@{/danh-muc/moi-cap-nhat}" title="Báo Mới">Truyện Mới</a>
                         </li>
-                        <li class="col-4 float-left">
-                            <a th:href="@{/danh-muc/truyen-vip}" title="Báo Vip">Báo Vip</a>
-                        </li>
+                        <!-- <li class="col-4 float-left">
+                            <a th:href="@{/danh-muc/truyen-vip d-none}" title="Báo Vip">Báo Vip</a>
+                        </li> -->
                     </ul>
                 </section>
                 <section class="navbar-category d-none">
@@ -75,7 +75,7 @@
                             <form id="js-search-panel" class="search-panel" th:action="@{/search}" th:method="POST">
                                 <div class="txtDiv">
                                     <input type="text" name="txtKeyword" id="txtKeyword" value=""
-                                           placeholder="Tên báo" class="form-control"
+                                           placeholder="Tên Truyện" class="form-control"
                                            autocomplete="off" required
                                            oninvalid="this.setCustomValidity('Bạn chưa nhập gì để tìm kiếm!')">
                                     <button class="btn btn-search mt-0" type="submit">
@@ -219,7 +219,7 @@
             <section class="list-group" style="margin-bottom: 20px;">
                 <section class="list-group-item list-group-item-action list-group-item-sidebar">
                     <a th:href="@{/danh-muc/moi-cap-nhat}" target="_blank"
-                       title="Báo Mới"> Báo Mới <span
+                       title="Báo Mới"> Truyện Mới <span
                             class="truyen-icon icon-next"></span>
                     </a>
                 </section>
@@ -230,10 +230,10 @@
                     </a>
                 </section>
                 <section class="list-group-item list-group-item-action list-group-item-sidebar">
-                    <a th:href="@{/danh-muc/truyen-vip}" target="_blank"
+                    <!-- <a th:href="@{/danh-muc/truyen-vip}" target="_blank"
                        title="Báo Vip"> Báo Vip <span
                             class="truyen-icon icon-next"></span>
-                    </a>
+                    </a> -->
                 </section>
             </section>
         </section>
@@ -254,7 +254,7 @@
     <section class="container">
         <form class="search-box-mobile" method="post" th:action="@{/search}">
             <input type="text" id="txtKeywordMobi" name="txtKeyword"
-                   class="form-control" placeholder="Tên báo hoặc tác giả không dấu" value=""
+                   class="form-control" placeholder="Tên truyện hoặc tác giả không dấu" value=""
                    autocomplete="off" required oninvalid="this.setCustomValidity('Bạn chưa nhập gì để tìm kiếm!')">
             <button type="submit" class="search-box-mobile-btn"
                     id="js-search-box-mobile-btn">

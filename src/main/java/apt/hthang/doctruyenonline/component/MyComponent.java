@@ -18,10 +18,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project truyenonline
- */
 
 @Component
 public class MyComponent {

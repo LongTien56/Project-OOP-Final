@@ -25,9 +25,6 @@ import java.util.Optional;
 
 import static java.lang.Long.valueOf;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 @Service
 @Transactional
 public class ChapterServiceImpl implements ChapterService {

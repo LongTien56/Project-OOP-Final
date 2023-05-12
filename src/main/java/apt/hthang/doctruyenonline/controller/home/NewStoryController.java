@@ -21,10 +21,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author Đời Không Như Là Mơ on 17/10/2018
- * @project truyenonline
- */
 
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")

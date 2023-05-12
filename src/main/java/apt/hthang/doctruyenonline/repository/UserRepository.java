@@ -18,9 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author Đời Không Như Là Mơ
- */
+
 @Repository
 public interface UserRepository extends JpaRepository< User, Long > {
     

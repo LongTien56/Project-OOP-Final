@@ -30,10 +30,6 @@ import java.security.Principal;
 
 import javax.validation.Valid;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")
 @RequestMapping(value = "/quan-tri/truyen")

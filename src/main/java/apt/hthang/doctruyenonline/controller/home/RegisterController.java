@@ -23,10 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-/**
- * @author Đời Không Như Là Mơ on 12/10/2018
- * @project truyenmvc
- */
+
 
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")

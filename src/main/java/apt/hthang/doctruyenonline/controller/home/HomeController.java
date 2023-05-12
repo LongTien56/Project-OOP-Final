@@ -27,10 +27,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
+
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")
 public class HomeController {
@@ -61,12 +58,12 @@ public class HomeController {
     
     @RequestMapping(value = "/")
     public String homePage(Model model) {
-        //Lấy ngày bắt đầu của tuần
+
         Date firstDayOfWeek = DateUtils.getFirstDayOfWeek();
         
         //Lấy ngày kết thúc của tuần
         Date lastDayOfWeek = DateUtils.getLastDayOfWeek();
-        //Lấy Top View Truyện Vip Trong Tháng
+
         List< StoryTop > topStoryWeek = storyService.
                 findStoryTopViewByStatuss(ConstantsListUtils.LIST_STORY_DISPLAY, firstDayOfWeek, lastDayOfWeek,
                         ConstantsStatusUtils.HISTORY_VIEW, ConstantsUtils.PAGE_DEFAULT, ConstantsUtils.PAGE_SIZE_TOP_VIEW_DEFAULT)
@@ -74,7 +71,7 @@ public class HomeController {
                 .collect(Collectors.toList());
         model.addAttribute("topStoryWeek", topStoryWeek);
         
-        // Lấy Danh Sách Truyện Vip Mới Cập Nhật
+     
         List< StoryUpdate > topvipstory = storyService.findStoryVipUpdateByStatus(ConstantsListUtils.LIST_CHAPTER_DISPLAY, ConstantsListUtils.LIST_STORY_DISPLAY, ConstantsStatusUtils.CATEGORY_ACTIVED,
                 ConstantsUtils.PAGE_DEFAULT, ConstantsUtils.PAGE_SIZE_DEFAULT)
                 .get()

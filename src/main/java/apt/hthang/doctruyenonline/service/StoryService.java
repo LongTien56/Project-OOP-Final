@@ -7,9 +7,6 @@ import org.springframework.data.domain.Page;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 public interface StoryService {
     
     /**
@@ -141,7 +138,6 @@ public interface StoryService {
                                                int page, int size);
     
     /**
-     * Lấy Danh sách Truyện Vip mới cập nhật
      *
      * @param listChapterStatus - danh sách trạng thái chapter
      * @param pagenumber        - biến số trang

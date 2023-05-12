@@ -15,10 +15,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 
-/**
- * @author Đời Không Như Là Mơ on 02/12/2018
- * @project truyenonline
- */
+
 public class AesUtil {
 
     private final int keySize;

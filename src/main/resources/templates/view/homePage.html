@@ -39,8 +39,8 @@
                                                             <h2 class="title">
                                                                 <a th:href="@{'/truyen/'+${topstory.id}}" th:title="${topstory.vnName}" th:text="${topstory.vnName}"></a>
                                                             </h2>
-                                                            <span>
-                                                                <span class="fz-16" th:text="${topstory.cnt}"></span> người truy cập</span>
+                                                            <span d-none>
+                                                                <!-- <span class="fz-16" th:text="${topstory.cnt}"></span> người truy cập</span> -->
                                                             <section class="description text-center" style="-webkit-line-clamp: 2;"
                                                                      th:text="${T(org.jsoup.Jsoup).parse(topstory.infomation).text()}"></section>
                                                         </section>
@@ -70,8 +70,8 @@
                                                         <h2 class="title">
                                                             <a th:href="@{'/truyen/'+${topstory.id}}" th:title="${topstory.vnName}" th:text="${topstory.vnName}"></a>
                                                         </h2>
-                                                        <section class="view text-secondary">
-                                                            <span class="text-red fz-16" th:text="${topstory.cnt}"></span>người truy cập
+                                                        <section class="view text-secondary" d-none>
+                                                            <!-- <span class="text-red fz-16" th:text="${topstory.cnt}"></span>người truy cập -->
                                                         </section>
                                                         <section class="description" th:text="${T(org.jsoup.Jsoup).parse(topstory.infomation).text()}"></section>
                                                     </section>
@@ -144,18 +144,18 @@
                                                 <section class="info">
                                                     <h2 class="title">
                                                         <a ng-href="/truyen/{{storyNU.id}}" ng-attr-title="{{storyNU.vnName}}">
-                                                            <img class="img-fluid" src="/images/vip-vip.gif" ng-show="storyNU.dealStatus === 1" alt="">
-                                                            <span ng-class="storyNU.dealStatus == 1?'shadow-2' : ''">{{storyNU.vnName}}</span>
+                                                            <!-- <img class="img-fluid" src="/images/vip-vip.gif" ng-show="storyNU.dealStatus === 1" alt=""> -->
+                                                            <span>{{storyNU.vnName}}</span>
                                                         </a>
                                                     </h2>
                                                     <section class="chap">{{storyNU.author}}</section>
                                                     <section class="author">
                                                         <a ng-if="storyNU.chapterId != null" ng-href="/truyen/{{storyNU.id}}/chuong-{{storyNU.chapterId}}"
-                                                           ng-attr-title="Chương {{storyNU.chapterNumber}}">Chương {{storyNU.chapterNumber}}</a>
+                                                           </a>
                                                         <a ng-if="storyNU.chapterId == null">&nbsp;</a>
                                                     </section>
                                                     <section class="time">
-                                                        {{storyNU.displayName?storyNU.displayName:storyNU.username}}
+                                                        <!-- {{storyNU.displayName?storyNU.displayName:storyNU.username}} -->
                                                     </section>
                                                 </section>
                                             </section>
@@ -177,7 +177,7 @@
                     <section class="col-12 col-md-12 col-lg-12">
                         <section class="block block-default">
                             <section class="block-header">
-                                <h2 class="title text-uppercase">TIN HOT</h2>
+                                <h2 class="title text-uppercase">Truyện HOT</h2>
                             </section>
                             <section class="block-content">
                                 <section class="row">

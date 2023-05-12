@@ -21,9 +21,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author Đời Không Như Là Mơ
- */
+
 @Controller
 @RequestMapping("/the-loai")
 public class CategoryController {

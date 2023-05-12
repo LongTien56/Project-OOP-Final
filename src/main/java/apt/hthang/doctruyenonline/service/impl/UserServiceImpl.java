@@ -27,9 +27,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 
 @Service
 @Transactional

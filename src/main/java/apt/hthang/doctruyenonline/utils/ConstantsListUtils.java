@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * @author Đời Không Như Là Mơ on 16/11/2018
- * @project truyenonline
- */
+
 public class ConstantsListUtils {
     
        public static final List< Status > LIST_STORY_STATUS_VIP = Collections.unmodifiableList(

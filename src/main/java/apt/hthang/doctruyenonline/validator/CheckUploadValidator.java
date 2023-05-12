@@ -8,10 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-/**
- * @author Đời Không Như Là Mơ on 13/10/2018
- * @project truyenmvc
- */
 
 public class CheckUploadValidator implements ConstraintValidator< CheckUpload, MultipartFile > {
     

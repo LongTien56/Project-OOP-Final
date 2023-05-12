@@ -5,9 +5,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.Map;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 
 @NoArgsConstructor
 @Data

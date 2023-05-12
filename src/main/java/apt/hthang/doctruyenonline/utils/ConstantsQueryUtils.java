@@ -1,9 +1,5 @@
 package apt.hthang.doctruyenonline.utils;
 
-/**
- * @author Đời Không Như Là Mơ
- */
-
 public class ConstantsQueryUtils {
     
     public static final String STORY_NEW_UPDATE_BY_STATUS = "SELECT s.id, s.vnName, s.images, s.author, s.updateDate,"

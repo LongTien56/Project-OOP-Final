@@ -15,7 +15,7 @@
                            th:title="${story.vnName}">
                             <img class="img-fluid"
                                  th:if="${story.dealStatus == 1}"
-                                 th:src="@{/images/vip-vip.gif}">
+                            
                             <span th:class="${story.dealStatus == 1}?'shadow-2' : ''"
                                   th:text="${story.vnName}"></span>
                         </a>
@@ -25,7 +25,7 @@
                         <a th:if="${story.chapterId != null}"
                            th:href="@{'/truyen/'+${story.id}+'/chuong-'+${story.chapterId}}"
                            th:title="'Chương ' + ${story.chapterNumber}"
-                           th:text="'Chương '+ ${story.chapterNumber}"></a>
+
                         <a th:unless="${story.chapterId != null}">&nbsp;</a>
                     </section>
                     <section class="time"

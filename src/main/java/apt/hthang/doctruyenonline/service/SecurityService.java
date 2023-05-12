@@ -2,10 +2,6 @@ package apt.hthang.doctruyenonline.service;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @author Đời Không Như Là Mơ on 15/10/2018
- * @project truyenmvc
- */
 public interface SecurityService {
     
     /**

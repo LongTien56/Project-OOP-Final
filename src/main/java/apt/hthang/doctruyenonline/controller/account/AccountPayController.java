@@ -20,10 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")
 @RequestMapping(value = "/tai-khoan")

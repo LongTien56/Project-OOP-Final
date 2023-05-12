@@ -21,9 +21,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 @Service
 @Transactional
 public class StoryServiceImpl implements StoryService {

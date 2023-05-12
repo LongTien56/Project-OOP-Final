@@ -10,9 +10,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 @Repository
 public interface CategoryRepository extends JpaRepository< Category, Integer > {
     

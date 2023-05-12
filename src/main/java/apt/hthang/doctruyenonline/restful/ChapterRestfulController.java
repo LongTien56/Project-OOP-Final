@@ -7,7 +7,6 @@ import apt.hthang.doctruyenonline.exception.HttpNotLoginException;
 import apt.hthang.doctruyenonline.exception.HttpUserLockedException;
 import apt.hthang.doctruyenonline.projections.ChapterOfStory;
 import apt.hthang.doctruyenonline.service.ChapterService;
-import apt.hthang.doctruyenonline.service.PayService;
 import apt.hthang.doctruyenonline.service.UserService;
 import apt.hthang.doctruyenonline.utils.ConstantsListUtils;
 import apt.hthang.doctruyenonline.utils.ConstantsStatusUtils;
@@ -26,10 +25,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
 @RestController
 @RequestMapping(value = "/api/chapter")
 public class ChapterRestfulController {

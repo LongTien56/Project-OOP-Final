@@ -20,10 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
-/**
- * @author Linh
- * @project doctruyenonline
- */
 @RestController
 @RequestMapping(value = "/api/test_chapter")
 public class TestResfulController {

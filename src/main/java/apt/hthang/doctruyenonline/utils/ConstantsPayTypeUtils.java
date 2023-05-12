@@ -1,9 +1,6 @@
 package apt.hthang.doctruyenonline.utils;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
+
 public class ConstantsPayTypeUtils {
     
     //Loại giao dịch nạp tiền

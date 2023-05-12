@@ -48,7 +48,7 @@
                                 <div class="md-form mb-0">
                                     <input type="text" class="form-control" id="cnName" name="cnName" th:value="*{cnName}"
                                            th:classappend="${#fields.hasErrors('cnName')} ? 'is-invalid' : ''">
-                                    <label for="cnName" class=" text-primary">Tên Tiếng Trung</label>
+                                    <label for="cnName" class=" text-primary">Văn Án</label>
                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('cnName')}" th:errors="*{cnName}"></em>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                 <div class="md-form mb-0">
                                     <input type="url" class="form-control" id="cnLink" name="cnLink" th:value="*{cnLink}"
                                            th:classappend="${#fields.hasErrors('cnLink')} ? 'is-invalid' : ''">
-                                    <label for="cnLink" class="form-label text-primary">Link Tiếng Trung</label>
+                                    <label for="cnLink" class="form-label text-primary">Nguồn</label>
                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('cnLink')}" th:errors="*{cnLink}"></em>
                                 </div>
                             </div>

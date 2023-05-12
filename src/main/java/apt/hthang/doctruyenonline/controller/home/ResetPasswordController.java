@@ -27,11 +27,6 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Đời Không Như Là Mơ on 15/10/2018
- * @project doctruyenonline
- */
-
 @Controller
 @PropertySource(value = {"classpath:messages.properties",
         "classpath:ValidationMessages.properties"},

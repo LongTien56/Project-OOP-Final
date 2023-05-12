@@ -18,10 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
+
 @RestController
 @RequestMapping(value = "/api/category")
 public class CategoryRestful {

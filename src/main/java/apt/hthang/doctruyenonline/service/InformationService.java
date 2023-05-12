@@ -2,9 +2,6 @@ package apt.hthang.doctruyenonline.service;
 
 import apt.hthang.doctruyenonline.entity.Information;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 public interface InformationService {
 
     /**

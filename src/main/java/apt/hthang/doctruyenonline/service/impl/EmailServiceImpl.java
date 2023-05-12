@@ -12,9 +12,6 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import javax.mail.internet.MimeMessage;
 import java.nio.charset.StandardCharsets;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 
 @Service
 public class EmailServiceImpl implements EmailService {

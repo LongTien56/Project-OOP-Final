@@ -29,10 +29,6 @@ import javax.validation.Valid;
 import java.security.Principal;
 import java.time.LocalDate;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")
 @RequestMapping(value = "/quan-tri/the_loai")

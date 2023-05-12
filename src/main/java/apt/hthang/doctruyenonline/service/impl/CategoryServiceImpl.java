@@ -15,9 +15,6 @@ import org.springframework.util.Assert;
 
 import java.util.List;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 @Service
 public class CategoryServiceImpl implements CategoryService {
     

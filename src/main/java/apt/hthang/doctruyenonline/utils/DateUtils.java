@@ -3,9 +3,7 @@ package apt.hthang.doctruyenonline.utils;
 import java.time.*;
 import java.util.Date;
 
-/**
- * @author Đời Không Như Là Mơ
- */
+
 public class DateUtils {
     
     //Lấy ngày đầu tiên của tuần hiện tại

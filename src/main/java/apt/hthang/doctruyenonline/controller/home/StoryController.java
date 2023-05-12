@@ -22,11 +22,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.security.Principal;
 import java.util.Objects;
 
-/**
- * @author Đời Không Như Là Mơ on 17/10/2018
- * @project truyenonline
- */
-
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")
 @RequestMapping("/truyen")
@@ -39,8 +34,7 @@ public class StoryController {
     private CategoryService categoryService;
     @Autowired
     private StoryService storyService;
-    @Autowired
-    private UserRatingService userRatingService;
+
     @Autowired
     private HistoryService historyService;
     
@@ -67,7 +61,6 @@ public class StoryController {
         
         User user = getUserLogin(principal);
         
-        getRating(model, user, story);
         
         getMenuAndInfo(model, story.getVnName());
         
@@ -104,29 +97,8 @@ public class StoryController {
         return user;
     }
     
-    private void getRating(Model model,
-                           User user,
-                           StorySummary story) {
-        // Chưa đăng nhập
-        boolean checkRating = false;
-        if (user != null) {
-            //Nếu người đọc là người đăng thì tính là đã đánh giá
-            if (story.getUserId().equals(user.getId())) {
-                // Người đọc là Converter
-                checkRating = true;
-            } else {
-                
-                // Kiểm tra Người dùng đã đánh giá chưa
-                if (userRatingService.existsRatingWithUser(story.getId(), user.getId())) {
-                    // Người dùng đã đánh giá
-                    checkRating = true;
-                }
-            }
-        }
-        model.addAttribute("countRating", userRatingService.countRatingStory(story.getId()));
-        model.addAttribute("rating", checkRating);
-    }
-    
+
+
     // Kiểm Tra Người Dùng có phải Converter của truyện không
     // false - Nếu Chưa Login hoặc không phải Converter
     // true - Nếu là Converter của truyện

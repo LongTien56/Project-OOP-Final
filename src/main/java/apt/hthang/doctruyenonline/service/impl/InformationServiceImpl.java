@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-/**
- * @author Đời Không Như Là Mơ
- */
+
 @Service
 public class InformationServiceImpl implements InformationService {
 

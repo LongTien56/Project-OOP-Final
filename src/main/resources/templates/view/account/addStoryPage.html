@@ -66,24 +66,24 @@
                                                         </div>
                                                         <!--Grid row-->
                                                         <!--Grid row-->
-                                                        <div class="row d-none">
+                                                        <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
                                                                     <input type="text" class="form-control" length="255" id="cnName" name="cnName" th:value="*{cnName}"
                                                                            th:classappend="${#fields.hasErrors('cnName')} ? 'is-invalid' : ''">
-                                                                    <label for="cnName" class=" text-primary form-label">Tên Tiếng Trung</label>
+                                                                    <label for="cnName" class=" text-primary form-label">Văn Án</label>
                                                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('cnName')}" th:errors="*{cnName}"></em>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <!--Grid row-->
                                                         <!--Grid row-->
-                                                        <div class="row d-none">
+                                                        <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="md-form mb-0">
                                                                     <input type="url" class="form-control" id="cnLink" name="cnLink" th:value="*{cnLink}" length="255"
                                                                            th:classappend="${#fields.hasErrors('cnLink')} ? 'is-invalid' : ''">
-                                                                    <label for="cnLink" class=" text-primary">Link Tiếng Trung</label>
+                                                                    <label for="cnLink" class=" text-primary">Nguồn</label>
                                                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('cnLink')}" th:errors="*{cnLink}"></em>
                                                                 </div>
                                                             </div>
@@ -108,7 +108,7 @@
                                                                 <div class="md-form mb-0">
                                                                     <textarea type="text" id="infomation" name="infomation" rows="6" class="form-control md-textarea" th:value="*{infomation}"
                                                                               th:classappend="${#fields.hasErrors('infomation')} ? 'is-invalid' : ''"></textarea>
-                                                                    <label for="infomation" class=" text-primary">Nội dung báo</label>
+                                                                    <label for="infomation" class=" text-primary">Nội dung</label>
                                                                     <em class="error invalid-feedback" th:if="${#fields.hasErrors('infomation')}" th:errors="*{infomation}"></em>
                                                                 </div>
                                                             </div>

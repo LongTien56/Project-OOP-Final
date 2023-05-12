@@ -9,9 +9,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 @Entity
 @Table(name = "history")
 @Data

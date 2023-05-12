@@ -98,26 +98,14 @@
                                             </section>
                                         </section>
                                     </section>
-                                    <section class="buttons d-none">
-                                        <a th:if="${readChapter ne null}" class="btn btn-truyen"
-                                           th:href="@{'/truyen/' + ${story.id} + '/chuong-' + ${readChapter.id}}">
-                                            Đọc tiếp
-                                        </a>
-                                        <a th:if="${(readChapter eq null) && (story.chapterHead ne null)}"
-                                           class="btn btn-truyen"
-                                           th:href="@{'/truyen/' + ${story.id} + '/chuong-' + ${story.chapterHead.id}}">
-                                            Đọc Từ Đầu
-                                        </a>
-                                        <a ng-show="follow === false" ng-click="registRecentReadingStory()" class="btn btn-outline-primary waves-effect">Theo dõi</a>
-                                        <a ng-show="follow === true" ng-click="unRecentReadingStory()" class="btn btn-outline-primary waves-effect">Bỏ Theo dõi</a>
-                                        <!-- Button trigger modal -->
-                                        <a class="btn btn-xs btn-read text-white" data-toggle="modal" data-target="#appointModal">
-                                            Đề Cử
-                                        </a>
-                                    </section>
-                                </section>
+                                    <section>
+                                        <section>
+                                            <h1>Nội Dung</h1>
+                                            <a th:text="${story.infomation}"></a>
+                                        </section>
                             </section>
-
+                         
+                        
                             <section class="col-rating col-3 d-none">
                                 <section class="rating-container text-center" itemscope="">
                                     <section class="title"> Đánh giá</section>

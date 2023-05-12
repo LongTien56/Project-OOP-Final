@@ -3,7 +3,6 @@ package apt.hthang.doctruyenonline.restful;
 import apt.hthang.doctruyenonline.entity.MyUserDetails;
 import apt.hthang.doctruyenonline.entity.Story;
 import apt.hthang.doctruyenonline.entity.User;
-import apt.hthang.doctruyenonline.entity.UserRating;
 import apt.hthang.doctruyenonline.exception.ExceptionResponse;
 import apt.hthang.doctruyenonline.exception.HttpMyException;
 import apt.hthang.doctruyenonline.exception.HttpNotLoginException;
@@ -26,10 +25,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
 @RestController
 @RequestMapping(value = "/api/story")
 public class StoryRestfulController {
@@ -38,12 +33,12 @@ public class StoryRestfulController {
     private StoryService storyService;
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserRatingService userRatingService;
+    // @Autowired
+    // private UserRatingService userRatingService;
     @Autowired
     private ChapterService chapterService;
-    @Autowired
-    private PayService payService;
+    // @Autowired
+    // private PayService payService;
     
     //Lấy Top 3 Truyện mới đăng của Converter
     @PostMapping(value = "/storyOfConverter")
@@ -92,25 +87,25 @@ public class StoryRestfulController {
             exceptionResponse.setMessage("Truyện không tồn tại hoặc đã bị xóa!");
             return new ResponseEntity<>(exceptionResponse, HttpStatus.OK);
         }
-        if (userRatingService.existsRatingWithUser(idBox, user.getId())) {
-            exceptionResponse.setMessage("Bạn đã đánh giá truyện này rồi");
-            return new ResponseEntity<>(exceptionResponse, HttpStatus.OK);
-        }
+        // if (userRatingService.existsRatingWithUser(idBox, user.getId())) {
+        //     exceptionResponse.setMessage("Bạn đã đánh giá truyện này rồi");
+        //     return new ResponseEntity<>(exceptionResponse, HttpStatus.OK);
+        // }
         String locationIP = WebUtils.getLocationIP(request);
         Date now = DateUtils.getCurrentDate();
-        UserRating userRating = userRatingService.existsRatingWithLocationIP(idBox, locationIP,
-                DateUtils.getMinutesAgo(now, ConstantsUtils.HALF_HOUR), now);
-        if (userRating != null) {
-            exceptionResponse.setMessage("Đã có đánh giá truyện tại địa chỉ IP này. Hãy đợi " + DateUtils.betweenHours(userRating.getCreateDate()) + " để tiếp tục đánh giá");
-            return new ResponseEntity<>(exceptionResponse, HttpStatus.OK);
-        }
-        Float result = userRatingService.saveRating(user.getId(), idBox, locationIP, rate);
-        //Lưu đánh giá
-        if (result != -1) {
-            exceptionResponse.setMyrating(userRatingService.countRatingStory(idBox));
-            DecimalFormat df = new DecimalFormat("#.0");
-            exceptionResponse.setMyrate(df.format(result));
-        }
+        // UserRating userRating = userRatingService.existsRatingWithLocationIP(idBox, locationIP,
+        //         DateUtils.getMinutesAgo(now, ConstantsUtils.HALF_HOUR), now);
+        // if (userRating != null) {
+        //     exceptionResponse.setMessage("Đã có đánh giá truyện tại địa chỉ IP này. Hãy đợi " + DateUtils.betweenHours(userRating.getCreateDate()) + " để tiếp tục đánh giá");
+        //     return new ResponseEntity<>(exceptionResponse, HttpStatus.OK);
+        // }
+        // Float result = userRatingService.saveRating(user.getId(), idBox, locationIP, rate);
+
+        // if (result != -1) {
+        //     exceptionResponse.setMyrating(userRatingService.countRatingStory(idBox));
+        //     DecimalFormat df = new DecimalFormat("#.0");
+        //     exceptionResponse.setMyrate(df.format(result));
+        // }
         return new ResponseEntity<>(exceptionResponse, HttpStatus.OK);
     }
     
@@ -160,17 +155,16 @@ public class StoryRestfulController {
         if (!story.getUser().getId().equals(user.getId()))
             throw new HttpMyException("Bạn không có quyền Xóa Truyện Không phải bản thân đăng!");
         Long countChapter = chapterService.countChapterByStory(story.getId());
-        Long countPay = payService.countPayOfStory(id);
-        Long countRating = userRatingService.countRatingStory(id);
-        if (countChapter > 0 || countPay > 0 || countRating > 0
-                || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_COMPLETED)
-                || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_GOING_ON))
-            throw new HttpMyException("Không thể xóa truyện!");
+        // Long countPay = payService.countPayOfStory(id);
+        // Long countRating = userRatingService.countRatingStory(id);
+        // if (countChapter > 0 || countPay > 0 || countRating > 0
+        //         || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_COMPLETED)
+        //         || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_GOING_ON))
+        //     throw new HttpMyException("Không thể xóa truyện!");
         storyService.deleteStoryById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
     
-    //Lấy Top 3 Truyện Mới Của Converter
     @PostMapping(value = "/topAppoidMonth")
     public ResponseEntity< ? > loadStoryTopViewMonth() {
         Date startDate = DateUtils.getFirstDayOfMonth();
@@ -212,12 +206,12 @@ public class StoryRestfulController {
         if (story == null)
             throw new HttpMyException("Truyện Không Tồn Tại hoặc Đã Bị Xóa");
         Long countChapter = chapterService.countChapterByStory(story.getId());
-        Long countPay = payService.countPayOfStory(id);
-        Long countRating = userRatingService.countRatingStory(id);
-        if (countChapter > 0 || countPay > 0 || countRating > 0
-                || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_COMPLETED)
-                || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_GOING_ON))
-            throw new HttpMyException("Không thể xóa truyện!");
+        // Long countPay = payService.countPayOfStory(id);
+        // Long countRating = userRatingService.countRatingStory(id);
+        // if (countChapter > 0 || countPay > 0 || countRating > 0
+        //         || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_COMPLETED)
+        //         || story.getStatus().equals(ConstantsStatusUtils.STORY_STATUS_GOING_ON))
+        //     throw new HttpMyException("Không thể xóa truyện!");
         storyService.deleteStoryById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

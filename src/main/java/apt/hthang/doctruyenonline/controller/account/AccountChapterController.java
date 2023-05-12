@@ -27,10 +27,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.security.Principal;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
+
 
 @Controller
 @PropertySource(value = "classpath:messages.properties", encoding = "UTF-8")

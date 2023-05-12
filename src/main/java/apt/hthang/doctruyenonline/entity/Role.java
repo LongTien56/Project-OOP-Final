@@ -12,9 +12,6 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 @Entity
 @Table(name = "role")
 @Data

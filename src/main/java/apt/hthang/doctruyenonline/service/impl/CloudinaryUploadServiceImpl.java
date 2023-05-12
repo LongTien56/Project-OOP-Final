@@ -12,10 +12,6 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.Map;
 
-/**
- * @author Đời Không Như Là Mơ on 27/09/2018
- * @project truyenonline
- */
 
 @Service
 public class CloudinaryUploadServiceImpl implements CloudinaryUploadService {

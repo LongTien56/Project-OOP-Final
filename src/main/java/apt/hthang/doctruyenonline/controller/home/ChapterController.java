@@ -19,11 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.Date;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
-
 @Controller
 @RequestMapping("/truyen")
 public class ChapterController {
@@ -35,8 +30,7 @@ public class ChapterController {
     private CategoryService categoryService;
     @Autowired
     private ChapterService chapterService;
-    @Autowired
-    private PayService payService;
+
     @Autowired
     private HistoryService historyService;
     
@@ -93,7 +87,7 @@ public class ChapterController {
         
         getMenuAndInfo(model, title);
         
-        checkVipStory(model, user, chapter, dayAgo, now);
+        // checkVipStory(model, user, chapter, dayAgo, now);
         
         //Lấy Chapter ID Next Và Previous
         getPreAndNextChapter(model, chapter);
@@ -120,45 +114,45 @@ public class ChapterController {
         return user;
     }
     
-    private void checkVipStory(Model model,
-                               User user,
-                               Chapter chapter,
-                               Date dayAgo,
-                               Date now) {
-        boolean check = true;
+    // private void checkVipStory(Model model,
+    //                            User user,
+    //                            Chapter chapter,
+    //                            Date dayAgo,
+    //                            Date now) {
+    //     boolean check = true;
         
-        //Kiểm Tra Chapter có phải tính phí hay không
-        //Chapter tính phí là chapter có chStatus = 2
-        if (chapter.getStatus() == 2) {
+    //     //Kiểm Tra Chapter có phải tính phí hay không
+    //     //Chapter tính phí là chapter có chStatus = 2
+    //     if (chapter.getStatus() == 2) {
             
-            // Kiểm tra người dùng đã đăng nhập chưa
-            if (user != null) {
-                //Kiểm tra người dùng có phải người đăng chapter không
-                boolean checkUser = user.equals(chapter.getUser());
-                // Kiểm tra người dùng đã thanh toán chương vip trong 24h qua không
-                // Nếu chưa thanh toán rồi thì check = false
-                if (!checkUser) {
-                    boolean checkPay = checkDealStory(chapter.getId(), user.getId(), dayAgo, now);
-                    if (!checkPay) {
-                        check = false;
-                    }
-                }
-            } else {
-                check = false;
-            }
-        }
+    //         // Kiểm tra người dùng đã đăng nhập chưa
+    //         if (user != null) {
+    //             //Kiểm tra người dùng có phải người đăng chapter không
+    //             boolean checkUser = user.equals(chapter.getUser());
+    //             // Kiểm tra người dùng đã thanh toán chương vip trong 24h qua không
+    //             // Nếu chưa thanh toán rồi thì check = false
+    //             if (!checkUser) {
+    //                 boolean checkPay = checkDealStory(chapter.getId(), user.getId(), dayAgo, now);
+    //                 if (!checkPay) {
+    //                     check = false;
+    //                 }
+    //             }
+    //         } else {
+    //             check = false;
+    //         }
+    //     }
         
-        model.addAttribute("checkVip", check);
-    }
+    //     model.addAttribute("checkVip", check);
+    // }
     
-    private boolean checkDealStory(Long chID,
-                                   Long uID,
-                                   Date dayAgo,
-                                   Date now) {
-        boolean check = payService
-                .checkDealChapterVip(chID, uID, dayAgo, now);
-        return check;
-    }
+    // private boolean checkDealStory(Long chID,
+    //                                Long uID,
+    //                                Date dayAgo,
+    //                                Date now) {
+    //     boolean check = payService
+    //             .checkDealChapterVip(chID, uID, dayAgo, now);
+    //     return check;
+    // }
     
     //Lấy Địa Chỉ Ip client
     private String getLocationIP(HttpServletRequest request) {

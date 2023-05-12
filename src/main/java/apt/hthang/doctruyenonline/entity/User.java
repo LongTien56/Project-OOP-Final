@@ -19,9 +19,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
-/**
- * @author Đời Không Như Là Mơ
- */
+
 @Entity
 @Table(name = "user", uniqueConstraints = {@UniqueConstraint(columnNames = "displayName"),
         @UniqueConstraint(columnNames = "email"), @UniqueConstraint(columnNames = "username")})

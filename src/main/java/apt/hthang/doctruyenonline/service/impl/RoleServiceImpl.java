@@ -8,9 +8,7 @@ import apt.hthang.doctruyenonline.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @author Đời Không Như Là Mơ
- */
+
 @Service
 public class RoleServiceImpl implements RoleService {
 

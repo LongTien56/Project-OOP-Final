@@ -10,7 +10,7 @@ import apt.hthang.doctruyenonline.exception.HttpUserLockedException;
 import apt.hthang.doctruyenonline.projections.ConveterSummary;
 import apt.hthang.doctruyenonline.projections.TopConverter;
 import apt.hthang.doctruyenonline.service.CloudinaryUploadService;
-import apt.hthang.doctruyenonline.service.PayService;
+// import apt.hthang.doctruyenonline.service.PayService;
 import apt.hthang.doctruyenonline.service.UserService;
 import apt.hthang.doctruyenonline.utils.*;
 import org.apache.commons.io.FilenameUtils;
@@ -25,18 +25,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.security.Principal;
 import java.util.List;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
 @RestController
 @RequestMapping(value = "/api/user")
 public class UserRestfulController {
     
     @Autowired
     private UserService userService;
-    @Autowired
-    private PayService payService;
+    // @Autowired
+    // private PayService payService;
     @Autowired
     private CloudinaryUploadService cloudinaryUploadService;
     @Autowired
@@ -89,8 +85,8 @@ public class UserRestfulController {
                 throw new HttpMyException("Số dư của bạn không đủ để thanh toán!");
             }
             userService.updateDisplayName(user.getId(), money, newNick);
-            payService.savePay(null, null, user, null, 0,
-                    ConstantsUtils.PRICE_UPDATE_NICK, ConstantsPayTypeUtils.PAY_DISPLAY_NAME_TYPE);
+            // payService.savePay(null, null, user, null, 0,
+            //         ConstantsUtils.PRICE_UPDATE_NICK, ConstantsPayTypeUtils.PAY_DISPLAY_NAME_TYPE);
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
             throw new HttpMyException("Có lỗi xảy ra. Mong bạn quay lại sau");

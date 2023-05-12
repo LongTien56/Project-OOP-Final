@@ -2,10 +2,7 @@ package apt.hthang.doctruyenonline.utils;
 
 import static java.lang.Long.valueOf;
 
-/**
- * @author Đời Không Như Là Mơ
- * @project doctruyenonline
- */
+
 public class ConstantsUtils {
     
     //Chuỗi random

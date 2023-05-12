@@ -5,9 +5,6 @@ import apt.hthang.doctruyenonline.entity.User;
 import apt.hthang.doctruyenonline.projections.CommentSummary;
 import org.springframework.data.domain.Page;
 
-/**
- * @author Đời Không Như Là Mơ
- */
 public interface CommentService {
     
     /**
